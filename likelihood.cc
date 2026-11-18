@@ -75,7 +75,7 @@ int main(){
     fout.close();
 
     std::ofstream fout2("nll.txt");
-    for(double mu = 0.01; mu <= 6; mu += 0.01)
+    for(double mu = 0.0; mu <= 6; mu += 0.01)
     {
         fout2 << mu << " " << nll(data, mu) << std::endl;
     }
