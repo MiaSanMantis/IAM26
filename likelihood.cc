@@ -66,31 +66,36 @@ int main(){
 
     std::cout << prob(data, mean) << std::endl;
 
+    double mu; 
 
     std::ofstream fout("likelihood.txt");
-    for(double mu = 0.0; mu <= 6; mu += 0.01)
+    for(int i = 0; i <= 600; i += 1)
     {
+        mu = 0.01 * i;
         fout << mu << " " << prob(data, mu) << std::endl;
     }
     fout.close();
 
     std::ofstream fout2("nll.txt");
-    for(double mu = 0.0; mu <= 6; mu += 0.01)
+    for(int i = 0; i <= 600; i += 1)
     {
+        mu = 0.01 * i;
         fout2 << mu << " " << nll(data, mu) << std::endl;
     }
     fout2.close();
 
     std::ofstream fout3("deltanll.txt");
-    for(double mu = 0.0; mu <= 6; mu += 0.001)
+    for(int i = 0; i <= 6000; i += 1)
     {
+        mu = 0.001 * i;
         fout3 << mu << " " << nll(data, mu) - nll(data, mean) << std::endl;
     }
     fout3.close();
 
     std::ofstream fout4("lambda.txt");
-    for(double mu = 0.0; mu <= 6; mu += 0.01)
+    for(int i = 0; i <= 600; i += 1)
     {
+        mu = 0.01 * i;
         fout4 << mu << " " << lambda(data, mu) << std::endl;
     }
     fout4.close();
