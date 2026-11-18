@@ -95,6 +95,8 @@ int main(){
     }
     fout4.close();
 
+    std::cout << lambda(data, mean) << std::endl;
+
     std::cout << (lambda(data, mean) - 233)/ sqrt(2*233) << std::endl;
 
 }
