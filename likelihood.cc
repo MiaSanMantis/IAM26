@@ -82,14 +82,14 @@ int main(){
     fout2.close();
 
     std::ofstream fout3("deltanll.txt");
-    for(double mu = 0.01; mu <= 6; mu += 0.001)
+    for(double mu = 0.0; mu <= 6; mu += 0.001)
     {
         fout3 << mu << " " << nll(data, mu) - nll(data, mean) << std::endl;
     }
     fout3.close();
 
     std::ofstream fout4("lambda.txt");
-    for(double mu = 0.01; mu <= 6; mu += 0.01)
+    for(double mu = 0.0; mu <= 6; mu += 0.01)
     {
         fout4 << mu << " " << lambda(data, mu) << std::endl;
     }
